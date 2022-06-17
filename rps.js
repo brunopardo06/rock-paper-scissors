@@ -8,6 +8,10 @@ console.log("Hello World");
 //The string is stored in a variable.
 
 //A function compares the computer and player's selection.
+//Is the selection different?
+//No: "Tie" Repeat until Yes.
+//Yes: If 
+
 // Rock>Scissors, Scissors>Paper, Paper>Rock.
 // If the string is the same, the function continues until it is different.
 // Winner takes one point
@@ -15,10 +19,18 @@ console.log("Hello World");
 //Repeat until reaching 5 rounds and announce a winner.
 
 function computerPlay() {
-    const computerSelect = ["Rock", "Paper", "Scissors"];
+    const weapon = ["Rock", "Paper", "Scissors"];
 
-    const random = Math.floor(Math.random() * computerSelect.length);
-    console.log(random, computerSelect[random]);
+    const random = Math.floor(Math.random() * weapon.length);
+    console.log(weapon[random]);
 }
 
-computerPlay();
+const playerWeapon = prompt("Select: Rock, Paper or Scissors");
+const playerSelection = playerWeapon.toLowerCase;
+console.log(playerSelection);
+
+function playRound(playerSelection, computerSelection) {
+    // your code here!
+  }
+
+  
