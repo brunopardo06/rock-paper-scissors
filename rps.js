@@ -1,6 +1,3 @@
-console.log("Hello World");
-
-
 //A function selects a random element from an array of three strings (Rock, Paper and Scissors).
 //The random string is stored into a variable.
 
@@ -18,19 +15,49 @@ console.log("Hello World");
 
 //Repeat until reaching 5 rounds and announce a winner.
 
-function computerPlay() {
-    const weapon = ["Rock", "Paper", "Scissors"];
 
-    const random = Math.floor(Math.random() * weapon.length);
-    console.log(weapon[random]);
+
+//A function selects a random element from an array of three strings (Rock, Paper and Scissors).
+//The random string is stored into a variable.
+function computerPlay() {
+    const computerWeapon = ["Rock", "Paper", "Scissors"];
+    const random = Math.floor(Math.random() * computerWeapon.length);
+    const randomWeapon = computerWeapon[random];
+    console.log(randomWeapon);
 }
 
-const playerWeapon = prompt("Select: Rock, Paper or Scissors");
-const playerSelection = playerWeapon.toLowerCase;
-console.log(playerSelection);
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
-  }
+    if (playerSelection === computerSelection){
+        roundResult = "Draw";
+        console.log("Draw");
+    } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
+        roundResult = "Player Wins";
+        console.log("Player Wins");
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        roundResult = "Computer Wins";
+        console.log("Computer Wins");
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        roundResult = "Player Wins";
+        console.log("Player Wins");
+    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+        roundResult = "Computer Wins";
+        console.log("Computer Wins");
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        roundResult = "Computer Wins";
+        console.log("Computer Wins");
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        roundResult = "Player Wins";
+        console.log("Player Wins");
+    }
+}
 
-  
+    //The user enters a string (Rock, paper or scissors), must be case insensitive.
+    //The string is stored in a variable.
+  const playerSelection = prompt("Select: Rock, Paper or Scissors");
+  console.log(playerSelection);
+
+  const computerSelection = computerPlay();
+
+  playRound("Rock","Paper");
