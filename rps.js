@@ -22,8 +22,7 @@
 function computerPlay() {
     const computerWeapon = ["Rock", "Paper", "Scissors"];
     const random = Math.floor(Math.random() * computerWeapon.length);
-    const randomWeapon = computerWeapon[random];
-    console.log(randomWeapon);
+    return computerWeapon[random];
 }
 
 
@@ -50,14 +49,46 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
         roundResult = "Player Wins";
         console.log("Player Wins");
+    } else {
+        roundResult = "Invalid ";
+        console.log("No winner");
     }
 }
 
-    //The user enters a string (Rock, paper or scissors), must be case insensitive.
-    //The string is stored in a variable.
-  const playerSelection = prompt("Select: Rock, Paper or Scissors");
-  console.log(playerSelection);
+//The user enters a string (Rock, paper or scissors), must be case insensitive.
+//The string is stored in a variable.
+    function playerPlay(){
 
-  const computerSelection = computerPlay();
+        let input;
+        let weaponInput  = prompt("Select: Rock, Paper or Scissors");
+        let playerWeapon = weaponInput.charAt(0).toUpperCase() + weaponInput.slice(1);
 
-  playRound("Rock","Paper");
+        if (playerWeapon === "Rock" || playerWeapon === "Paper" || playerWeapon === "Scissors"){
+            return playerWeapon;
+        
+        } else {
+            input = false;
+            while (input===false){
+                alert("Invalid input, please enter \"Rock\", \"Paper\" or \"Scissors\".")
+                let weaponInput2  = prompt("Select: Rock, Paper or Scissors");
+                let playerWeapon2 = weaponInput2.charAt(0).toUpperCase() + weaponInput2.slice(1);
+
+                if (playerWeapon2 == "Rock" || playerWeapon2 == "Paper" || playerWeapon2 == "Scissors"){
+                    return playerWeapon2;
+                }
+            }
+        }
+    }
+
+    const playerSelection = playerPlay();
+    const computerSelection = computerPlay();
+    console.log(`Player selection: ${playerSelection}`);
+    console.log(`Computer selection: ${computerSelection}`);
+
+    playRound(playerSelection,computerSelection);
+
+    function game (){
+        for (let i = 0; i < 5; i++) {
+            // your code here!
+        }
+    }
